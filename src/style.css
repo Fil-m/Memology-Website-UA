@@ -219,18 +219,17 @@ section {
   margin-bottom: 15px;
 }
 
-/* МОЛОКО ЦЕНТРАЛЬНИЙ ЕЛЕМЕНТ */
+/* МОЛОКО ЦЕНТРАЛЬНИЙ ЕЛЕМЕНТ - ІДЕАЛЬНИЙ СТИЛЬ */
 .hero-milk {
-  width: 250px;
+  width: 280px;
   height: auto;
-  margin: 60px auto;
+  margin: 100px auto; /* Багато простору навколо */
   display: block;
   z-index: 2;
-  filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
-  animation: milk-float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(255,255,255,0.2));
+  transition: transform 0.5s ease;
 }
 
-@keyframes milk-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+.hero-milk:hover {
+  transform: scale(1.05); /* Легке збільшення при наведенні замість плавання */
 }
