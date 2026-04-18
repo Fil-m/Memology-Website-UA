@@ -219,20 +219,21 @@ section {
   margin-bottom: 15px;
 }
 
-/* МОЛОКО ЦЕНТРАЛЬНИЙ ЕЛЕМЕНТ - ІДЕАЛЬНИЙ СТИЛЬ */
+/* МОЛОКО ЦЕНТРАЛЬНИЙ ЕЛЕМЕНТ - ВЛАСНЕ ЗОБРАЖЕННЯ */
 .hero-milk {
-  width: 320px;
-  height: auto;
+  max-width: 280px;
+  max-height: 500px;
+  width: auto;
   margin: 150px auto; /* Суттєвий простір: 150px зверху і знизу */
   display: block;
   z-index: 2;
   mix-blend-mode: screen; /* Прибирає темний фон */
-  filter: contrast(1.2) brightness(1.1); /* Підсилює чистоту чорного для кращого злиття */
-  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 95%); /* Прибирає різкі краї квадрата */
-  mask-image: radial-gradient(circle, black 60%, transparent 95%);
+  filter: contrast(1.1) brightness(1.05); /* Легка корекція для кращого злиття */
+  -webkit-mask-image: radial-gradient(ellipse, black 40%, transparent 85%); /* Еліптична маска для високого стакана */
+  mask-image: radial-gradient(ellipse, black 40%, transparent 85%);
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hero-milk:hover {
-  transform: scale(1.1); /* Преміальне збільшення при наведенні */
+  transform: scale(1.05); /* Акуратне збільшення */
 }
