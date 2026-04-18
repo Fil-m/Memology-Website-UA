@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --accent-milk: #f5f0e8;
+  --accent-f1: #e67e22; /* Оранжевий - Деміург */
+  --accent-f2: #c0392b; /* Червоний - Нуклеос */
+  --accent-f3: #3498db; /* Синій - Сингулярність */
+  --accent-f4: #27ae60; /* Зелений - Контакт */
+  --accent-f5: #9b59b6; /* Фіолетовий - Вічність */
+  --text-primary: #e8e8e8;
+  --text-secondary: #8a8a9a;
+  --font-header: 'Orbitron', sans-serif;
+  --font-text: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-header);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Секції */
+section {
+  min-height: 100vh;
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HERO */
+#hero {
+  position: relative;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0f 70%);
+  text-align: center;
+  align-items: center;
+}
+
+#hero h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  background: linear-gradient(to bottom, #fff, #8a8a9a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logo-glow 3s infinite alternate;
+}
+
+@keyframes logo-glow {
+  from { filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
+  to { filter: drop-shadow(0 0 25px rgba(255,255,255,0.5)); }
+}
+
+#hero p {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--accent-milk);
+  color: var(--bg-primary);
+}
+
+.btn-secondary {
+  border: 1px solid var(--accent-milk);
+  color: var(--accent-milk);
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* ФІЛЬМИ */
+#films-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.film-card {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-bottom: 4px solid var(--accent-milk);
+}
+
+.film-card:hover {
+  transform: scale(1.05);
+}
+
+.film-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  filter: grayscale(0.5);
+  transition: filter 0.3s ease;
+}
+
+.film-card:hover img {
+  filter: grayscale(0);
+}
+
+.film-card-content {
+  padding: 20px;
+}
+
+.film-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Темы фильмов */
+.card-f1 { border-color: var(--accent-f1); }
+.card-f2 { border-color: var(--accent-f2); }
+.card-f3 { border-color: var(--accent-f3); }
+.card-f4 { border-color: var(--accent-f4); }
+.card-f5 { border-color: var(--accent-f5); }
+
+/* ПЕРСОНАЖІ */
+#characters-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.character-item {
+  position: relative;
+  width: 200px;
+  text-align: center;
+}
+
+.character-item img {
+  width: 100%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.character-item:hover img {
+  border-color: var(--accent-milk);
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+}
+
+.character-info {
+  margin-top: 15px;
+}
+
+/* ФІЛОСОФІЯ */
+.philosophy-viz {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.viz-node {
+  text-align: center;
+  max-width: 250px;
+}
+
+.viz-node h4 {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* МОЛОКО BG ELEMENT */
+.milk-bg {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 300px;
+  opacity: 0.2;
+  pointer-events: none;
+}
