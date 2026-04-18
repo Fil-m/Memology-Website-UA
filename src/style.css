@@ -219,12 +219,18 @@ section {
   margin-bottom: 15px;
 }
 
-/* МОЛОКО BG ELEMENT */
-.milk-bg {
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-  width: 300px;
-  opacity: 0.2;
-  pointer-events: none;
+/* МОЛОКО ЦЕНТРАЛЬНИЙ ЕЛЕМЕНТ */
+.hero-milk {
+  width: 250px;
+  height: auto;
+  margin: 60px auto;
+  display: block;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+  animation: milk-float 4s ease-in-out infinite;
+}
+
+@keyframes milk-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
