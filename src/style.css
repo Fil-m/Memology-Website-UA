@@ -219,21 +219,20 @@ section {
   margin-bottom: 15px;
 }
 
-/* МОЛОКО ЦЕНТРАЛЬНИЙ ЕЛЕМЕНТ - ВЛАСНЕ ЗОБРАЖЕННЯ */
+/* ФІНАЛЬНИЙ СТАКАН МОЛОКА — ЦЕНТРАЛЬНИЙ ОБ'ЄКТ */
 .hero-milk {
-  max-width: 280px;
-  max-height: 500px;
-  width: auto;
-  margin: 150px auto; /* Суттєвий простір: 150px зверху і знизу */
+  width: 220px;
+  height: auto;
+  margin: 120px auto; /* Суттєвий простір: 120px зверху і знизу */
   display: block;
   z-index: 2;
-  mix-blend-mode: screen; /* Прибирає темний фон */
-  filter: contrast(1.1) brightness(1.05); /* Легка корекція для кращого злиття */
-  -webkit-mask-image: radial-gradient(ellipse, black 40%, transparent 85%); /* Еліптична маска для високого стакана */
-  mask-image: radial-gradient(ellipse, black 40%, transparent 85%);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* М'яка маска для усунення будь-яких артефактів по краях */
+  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 95%);
+  mask-image: radial-gradient(ellipse at center, black 50%, transparent 95%);
+  filter: drop-shadow(0 0 40px rgba(255,255,255,0.15));
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .hero-milk:hover {
-  transform: scale(1.05); /* Акуратне збільшення */
+  transform: scale(1.08) translateY(-10px); /* Елегантний підйом при наведенні */
 }
