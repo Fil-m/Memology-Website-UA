@@ -46,7 +46,8 @@ animate();
 
 // Плавне зникнення при скролі
 const observerOptions = {
-  threshold: 0.1
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -54,14 +55,15 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-document.querySelectorAll('section > *').forEach(el => {
+document.querySelectorAll('section > *:not(canvas)').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
-  el.style.transition = 'all 0.8s ease-out';
+  el.style.transition = 'all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
   observer.observe(el);
 });
 
