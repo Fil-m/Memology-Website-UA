@@ -221,15 +221,16 @@ section {
 
 /* МОЛОКО ЦЕНТРАЛЬНИЙ ЕЛЕМЕНТ - ІДЕАЛЬНИЙ СТИЛЬ */
 .hero-milk {
-  width: 280px;
+  width: 320px;
   height: auto;
-  margin: 100px auto; /* Багато простору навколо */
+  margin: 150px auto; /* Суттєвий простір: 150px зверху і знизу */
   display: block;
   z-index: 2;
-  filter: drop-shadow(0 0 40px rgba(255,255,255,0.2));
-  transition: transform 0.5s ease;
+  mix-blend-mode: screen; /* Робить чорний фон картинки повністю прозорим */
+  filter: drop-shadow(0 0 50px rgba(255,255,255,0.1));
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hero-milk:hover {
-  transform: scale(1.05); /* Легке збільшення при наведенні замість плавання */
+  transform: scale(1.1); /* Преміальне збільшення при наведенні */
 }
